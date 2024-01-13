@@ -10,6 +10,8 @@ namespace CurrencyConverter.Blazor.Pages
 
         private IEnumerable<CurrencyData>? currencies;
 
+        private double sourceValue = 1;
+
         private async Task RefreshAsync()
         {
             var response = await ConverterService.GetAllAsync();

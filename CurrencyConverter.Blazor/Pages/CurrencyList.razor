@@ -7,6 +7,9 @@
 else
 {
     <div class="row">
+        <InputNumber @bind-Value="sourceValue" />
+    </div>
+    <div class="row">
         <table id="currency-table" class="table table-hover">
             <thead>
                 <tr>
@@ -27,7 +30,7 @@ else
                         <td class="align-middle">@currency.Country</td>
                         <td class="align-middle">
                             <span class="badge badge-outline pe-2 fixed-width text-end">
-                                @currency.EuroRate.ToString("F2")
+                                @((currency.EuroRate * sourceValue).ToString("F2"))
                             </span>
                         </td>
                         @*
